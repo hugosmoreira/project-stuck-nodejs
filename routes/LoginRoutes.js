@@ -1,25 +1,13 @@
 const express = require('express');
 const app = express();
-const router = express.router();
+const router = express.Router();
 
+app.set("view engine", "pug");
+app.set("views", "views");
 
-app.set("view engine", "pug")
-app.set("views", "views")
-
-
-// Routes
-
-const loginRoute = require('./routes/loginRoutes')
-
-app.use("/login", loginRoute)
-
-router.get("/",  (req, res, next) => {
-
-    let payload = {
-        pageTitle: "Home"
-    }
-
-    res.status(200).render("home", payload)
+router.get("/", (req, res, next) => {
+    
+    res.status(200).render("login");
 })
 
 module.exports = router;
