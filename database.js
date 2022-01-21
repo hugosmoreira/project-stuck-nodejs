@@ -10,7 +10,7 @@ class Database {
 
 
     connect() {
-        mongoose.connect("mongodb+srv://admin:admin123456@stuck-app.mysz6.mongodb.net/stuck-app?retryWrites=true&w=majority")
+        mongoose.connect("")
         .then(() => {
             console.log("database connection successful")
         })
